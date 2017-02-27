@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/static/main.css">
+	<link rel="stylesheet" href="/static/bootstrap.min.css">
+	<title>Fun Catalog</title>
+</head>
+<body>
+
+
+<nav class="container heading">
+	<h1 class="col-sm-10">My Favorite Sports Catalog</h1>
+	<div class="col-sm-3">
+		<a href="{{url_for('categoryShow')}}">Home</a>
+		<a href="{{url_for('disconnect')}}">Log out </a>
+	</div>
+</nav>
+
+</br>
+
+<div class="container">
+	<div class="col-sm-2 sidebar">
+
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul>
+			{% for message in messages %}
+				<li><strong>{{ message }}</strong></li>
+			{% endfor %}	
+		</ul>
+		{% endif %}
+		{% endwith %}
+
+		{% for i in category %}
+		<div>
+			<a class="lead" href='{{url_for('itemPage', category_id = i.id) }}'>{{i.name}}</a>
+			</br>
+			<a href='{{url_for('editCategory', category_id = i.id) }}'>Edit</a>
+			<a href = '{{url_for('deleteCategory', category_id = i.id) }}'>Delete</a>
+			</br></br>
+		</div>
+		{% endfor %}
+		<a href='{{url_for('newCategory') }}'>Add a New Category</a>
+	</div>
+
+	{% block content %}
+	<div class="content col-sm-10">
+		<img src="static/sports.jpg" class="img-responsive img-thumbnail" alt="userguide">	
+	</div>
+	{% endblock content %}
+</div>
+
+</body>
+</html>

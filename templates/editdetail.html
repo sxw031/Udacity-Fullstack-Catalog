@@ -1,0 +1,19 @@
+<html>
+	<body>
+
+		<form action= "{{url_for('detailEdit', category_id = category_id, item_id = item_id) }}" method = 'POST'>
+
+			<p>Write the Usage for {{item.name}}:</p>
+
+			<textarea rows='35' cols='120' name='usage' placeholder='{{item.usage}}' required></textarea>
+			<!-- <input type='textarea' size='100' name='description' placeholder='{{item.description}}' required></input> -->
+			</br></br>
+
+			<input type='submit' value='Submit'>
+
+		</form>
+
+		<a href= '{{url_for('itemDetail', category_id = category_id, item_id = item_id )}}' class="btn btn-default"><button>Cancel</button></a>
+
+	</body>
+</html>

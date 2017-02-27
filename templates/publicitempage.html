@@ -1,0 +1,16 @@
+{% extends "publicmain.html" %}
+
+{% block content %}
+
+<div class="content col-sm-10">
+	{% for item in items %}
+	<div>
+		</br>
+		<a class="lead" href='{{url_for('itemDetail', category_id = category_id, item_id = item.id )}}'>{{item.name}}</a>
+		<p class="lead">{{item.description}}</p>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock content %}
+

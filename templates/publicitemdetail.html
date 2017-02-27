@@ -1,0 +1,12 @@
+{% extends "publicmain.html" %}
+
+{% block content %}
+
+<div class="content col-sm-10">
+	<h3>{{item.name}}</h3>
+	<a href='{{url_for('itemPage', category_id = category_id) }}'><button>Go back</button></a>
+	<p>{{item.description}}</p>
+	<p>{{item.usage}}</p>
+</div>
+
+{% endblock content %}
