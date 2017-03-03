@@ -24,7 +24,7 @@ APPLICATION_NAME = "Fun Catalog"
 
 ########################### Connect to Databse and Create Session #################################
 
-engine = create_engine('postgresql://postgres:happy123@localhost/catalogdb')
+engine = create_engine('postgresql://catalog:happy123@localhost/catalogdb')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind = engine)

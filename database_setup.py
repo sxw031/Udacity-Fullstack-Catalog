@@ -71,7 +71,7 @@ class CategoryItems(Base):
 
 ####  insert at the end of file ####
 
-engine = create_engine('postgresql://postgres:happy123@localhost/catalogdb')
+engine = create_engine('postgresql://catalog:happy123@localhost/catalogdb')
 
 Base.metadata.create_all(engine)
  
