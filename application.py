@@ -24,7 +24,7 @@ APPLICATION_NAME = "Fun Catalog"
 
 ########################### Connect to Databse and Create Session #################################
 
-engine = create_engine('sqlite:///catalogitems.db')
+engine = create_engine('postgresql://datauser1:super123@localhost/catalogdb')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind = engine)
